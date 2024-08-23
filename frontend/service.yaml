@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: blog
+  labels:
+    app: blog
+spec:
+  selector:
+    app: blog
+    component: frontend
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
